@@ -8,3 +8,9 @@ services:
    - "${PORT}:3306"
   volumes:
    - ./gce-proxy/${JSON_KEY_FILE}:/config
+  networks:
+   - backend
+networks:
+ backend:
+  external:
+   name: ${NETWORK}
